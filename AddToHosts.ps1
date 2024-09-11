@@ -1,5 +1,5 @@
 ﻿# By Tom Chantler - https://tomssl.com/2019/04/30/a-better-way-to-add-and-remove-windows-hosts-file-entries/
- function edit-hostfile {
+ function add-hostfileentry {
 param([string]$DesiredIP = ""
     ,[string]$Hostname = ""
 	,[bool]$CheckHostnameOnly = $false)
