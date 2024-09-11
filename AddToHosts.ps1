@@ -1,6 +1,7 @@
 ﻿# By Tom Chantler - https://tomssl.com/2019/04/30/a-better-way-to-add-and-remove-windows-hosts-file-entries/
-param([string]$DesiredIP = "127.0.0.1"
-    ,[string]$Hostname = "tomssl.local"
+ function edit-hostfile {
+param([string]$DesiredIP = ""
+    ,[string]$Hostname = ""
 	,[bool]$CheckHostnameOnly = $false)
 # Adds entry to the hosts file.
 #Requires -RunAsAdministrator
@@ -18,4 +19,5 @@ Else {
     Write-Host $desiredIP.PadRight(20," ") "$Hostname - adding to hosts file... " -ForegroundColor Yellow -NoNewline
     Add-Content -Encoding UTF8  $hostsFilePath ("$DesiredIP".PadRight(20, " ") + "$Hostname")
     Write-Host " done"
+}
 }
